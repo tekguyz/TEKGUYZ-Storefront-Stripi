@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+
+  /* Mesh Gradients */
+  --gradient-mesh-1: var(--mesh-1);
+  --gradient-mesh-2: var(--mesh-2);
+  --gradient-mesh-3: var(--mesh-3);
+  --gradient-mesh-4: var(--mesh-4);
+  --gradient-mesh-5: var(--mesh-5);
+
+  /* Spacing and Constants */
+  --section-padding-y: clamp(4rem, 8vw, 8rem);
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+  --radius-button: 9999px;
+  --radius-card: 12px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0d253d; /* Ink */
+  --card: #ffffff;
+  --card-foreground: #0d253d;
+  --popover: #ffffff;
+  --popover-foreground: #0d253d;
+
+  /* Semantic alignments for existing code */
+  --color-base: #ffffff; /* Canvas */
+  --color-surface: #ffffff; /* Canvas */
+  --color-surface-2: #f6f9fc; /* Canvas Soft */
+  --color-text: #0d253d; /* Ink */
+  --color-text-muted: #64748d; /* Ink Mute */
+  --color-accent-dim: rgba(83, 58, 253, 0.04);
+  --color-accent-glow: rgba(83, 58, 253, 0.08);
+  
+  /* Stripi color palette */
+  --primary: #533afd; /* Indigo */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f6f9fc; /* Canvas Soft */
+  --secondary-foreground: #0d253d;
+  --muted: #f6f9fc;
+  --muted-foreground: #64748d;
+  
+  --accent: #533afd; /* Indigo */
+  --accent-foreground: #ffffff;
+  --accent-dim: rgba(83, 58, 253, 0.04);
+  --accent-glow: rgba(83, 58, 253, 0.08);
+  
+  --destructive: #ea2261; /* Ruby */
+  
+  /* Minimal hairline borders */
+  --border: #e3e8ee; /* Hairline */
+  --border-subtle: #f6f9fc;
+  --input: #a8c3de; /* Hairline Input */
+  --ring: #533afd;
+  
+  --radius: 12px; /* standard card is lg */
+
+  --shadow-card: rgba(0, 55, 112, 0.08) 0px 1px 3px;
+  --shadow-card-hover: rgba(0, 55, 112, 0.08) 0px 8px 24px, rgba(0, 55, 112, 0.04) 0px 2px 6px;
+
+  --mesh-1: #f5e9d4; /* Cream */
+  --mesh-2: #9b6829; /* Lemon / Sherbet */
+  --mesh-3: #533afd; /* Indigo */
+  --mesh-4: #ea2261; /* Ruby */
+  --mesh-5: #f96bee; /* Magenta */
+}
+
+.dark {
+  --background: #0d253d; /* Deep navy */
+  --foreground: #ffffff;
+  --card: #1c1e54; /* Brand Dark 900 */
+  --card-foreground: #ffffff;
+  --popover: #1c1e54;
+  --popover-foreground: #ffffff;
+
+  /* Semantic alignments for existing code */
+  --color-base: #0d253d;
+  --color-surface: #1c1e54;
+  --color-surface-2: #132c45;
+  --color-text: #ffffff;
+  --color-text-muted: #b9b9f9;
+  --color-accent-dim: rgba(102, 94, 253, 0.1);
+  --color-accent-glow: rgba(102, 94, 253, 0.2);
+  
+  --primary: #533afd;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #132c45;
+  --secondary-foreground: #ffffff;
+  --muted: #132c45;
+  --muted-foreground: #b9b9f9;
+  
+  --accent: #665efd; /* Indigo Soft */
+  --accent-foreground: #ffffff;
+  --accent-dim: rgba(102, 94, 253, 0.1);
+  --accent-glow: rgba(102, 94, 253, 0.2);
+  
+  --destructive: #ea2261;
+  
+  --border: #273951;
+  --border-subtle: #132c45;
+  --input: #273951;
+  --ring: #665efd;
+
+  --shadow-card: none;
+  --shadow-card-hover: none;
+
+  --mesh-1: rgba(29, 30, 84, 0.6);
+  --mesh-2: rgba(102, 94, 253, 0.4);
+  --mesh-3: rgba(234, 34, 97, 0.3);
+  --mesh-4: rgba(234, 34, 97, 0.2);
+  --mesh-5: rgba(249, 107, 238, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01";
+}
+
+::selection {
+  background-color: oklch(from var(--accent) l c h / 0.16);
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Custom scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: var(--color-surface-2);
+  border-radius: 4px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+  opacity: 0.8;
+}
+
+.scrollbar-blue::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-blue::-webkit-scrollbar-track {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+.scrollbar-blue::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 9999px;
+}
+.scrollbar-blue::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  filter: brightness(1.1);
+}
+.scrollbar-blue {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--border-subtle);
+}

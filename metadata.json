@@ -1,0 +1,8 @@
+{
+  "name": "Remix: SpaceX: TEKGUYZ Storefront",
+  "description": "Premium single-page storefront for the Downey Voice Writing Student Bundle with PayPal sandbox integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
