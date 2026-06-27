@@ -27,13 +27,13 @@ export function QuickOrderDrawer() {
           </Button>
         }
       />
-      <SheetContent className="w-full sm:max-w-md flex flex-col p-0 border-l border-[var(--color-border)] bg-[var(--color-base)] h-full max-h-screen overflow-hidden rounded-none">
+      <SheetContent className="w-full sm:max-w-md flex flex-col p-0 border-l border-[var(--color-border)] bg-[var(--color-base)] h-full max-h-screen overflow-hidden rounded-l-lg">
         <div className="p-4 border-b border-[var(--color-border)] flex-shrink-0">
           <SheetHeader>
-            <SheetTitle className="text-left font-display font-black text-xs uppercase tracking-[0.18em] text-[var(--color-text)]">
+            <SheetTitle className="text-left font-sans font-semibold text-xs uppercase tracking-[0.1em] text-[var(--color-text)]">
               Quick Order Summary
             </SheetTitle>
-            <SheetDescription className="text-left text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-muted)] mt-1">
+            <SheetDescription className="text-left text-[10px] font-sans uppercase tracking-wider text-[var(--color-text-muted)] mt-1 font-light">
               Review your bundle before checkout.
             </SheetDescription>
           </SheetHeader>
@@ -53,21 +53,21 @@ export function QuickOrderDrawer() {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <h3 className="font-bold text-xs uppercase tracking-[0.12em] text-[var(--color-text)] leading-tight">{PRODUCT.name}</h3>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-muted)] mt-1">{PRODUCT.subtitle}</p>
+                <h3 className="font-semibold text-xs uppercase tracking-[0.08em] text-[var(--color-text)] leading-tight">{PRODUCT.name}</h3>
+                <p className="text-[10px] font-sans uppercase tracking-wider text-[var(--color-text-muted)] mt-1 font-light">{PRODUCT.subtitle}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-bold text-[var(--color-text)] text-[10px] uppercase tracking-[0.15em] font-mono">What&apos;s Included</h4>
+              <h4 className="font-semibold text-[var(--color-text)] text-[10px] uppercase tracking-[0.08em] font-sans">What&apos;s Included</h4>
               <ul className="space-y-3">
                 {BUNDLE_ITEMS.map((section) => (
                   <li key={section.id} className="text-xs">
-                    <span className="font-bold text-[10px] uppercase tracking-wider text-[var(--color-text)] block mb-1">{section.category}</span>
+                    <span className="font-semibold text-[10px] uppercase tracking-wider text-[var(--color-text)] block mb-1 font-sans">{section.category}</span>
                     <ul className="pl-0 space-y-1">
                       {section.items.map((item, idx) => (
-                        <li key={idx} className="text-[var(--color-text-muted)] flex items-start text-[11px]">
-                          <span className="text-[var(--color-text)] mr-2 mt-1 shrink-0 w-1 h-1 bg-current" />
+                        <li key={idx} className="text-[var(--color-text-muted)] flex items-start text-[11px] font-light font-sans">
+                          <span className="text-[var(--primary)] mr-2 mt-1.5 shrink-0 w-1 h-1 rounded-full bg-current" />
                           <span className="leading-snug">{item}</span>
                         </li>
                       ))}
@@ -81,8 +81,8 @@ export function QuickOrderDrawer() {
 
         <div className="p-4 border-t border-[var(--color-border)] bg-[var(--color-surface)] flex-shrink-0">
           <div className="flex justify-between items-center mb-4">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--color-text)]">Total</span>
-            <span className="font-black text-lg uppercase tracking-tight text-[var(--color-text)]">{PRODUCT.priceFormatted}</span>
+            <span className="text-xs font-sans uppercase tracking-[0.08em] text-[var(--color-text-muted)]">Total</span>
+            <span className="font-sans font-light text-xl text-[var(--color-text)] tracking-[-0.03em] [font-feature-settings:'tnum']">{PRODUCT.priceFormatted}</span>
           </div>
           
           <div className="space-y-3">

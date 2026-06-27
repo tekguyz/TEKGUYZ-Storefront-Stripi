@@ -23,7 +23,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex items-center justify-center w-10 h-10 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors rounded-[var(--radius-button)]"
+      className="flex items-center justify-center w-10 h-10 text-[var(--color-text-muted)] hover:text-[var(--primary)] transition-colors rounded-[var(--radius-button)]"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <AnimatePresence mode="wait" initial={false}>

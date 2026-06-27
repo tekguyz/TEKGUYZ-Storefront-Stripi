@@ -36,8 +36,11 @@ export default function PurchaseBlock() {
 
               <div className="w-full" role="region" aria-label="Purchase">
                 <PayPalMessages />
-                <div id="paypal-button-container" style={{ minHeight: "48px" }}>
-                  <PayPalButton />
+                {/* Studio backdrop box for third-party checkout button */}
+                <div className="p-4 sm:p-6 bg-white dark:bg-[rgba(13,37,61,0.5)] border border-[var(--color-border)] rounded-xl shadow-sm mb-2">
+                  <div id="paypal-button-container" style={{ minHeight: "48px" }}>
+                    <PayPalButton />
+                  </div>
                 </div>
               </div>
 

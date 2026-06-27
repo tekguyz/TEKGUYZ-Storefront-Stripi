@@ -151,7 +151,7 @@ export default function PayPalButton() {
         style: {
           layout: "horizontal",
           color: "gold",
-          shape: "rect",
+          shape: "pill",
           label: "buynow",
           tagline: false,
           height: 48,
